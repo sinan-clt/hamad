@@ -628,6 +628,36 @@ $(window).on('load', function() {
 	});
 })();
 
+// Smooth scroll function
+function smoothScrollTo(targetId) {
+  const targetElement = document.getElementById(targetId);
+  if (targetElement) {
+    // First, close the mobile menu if open
+    const mobileCanvas = document.querySelector('.__js_mobile-canvas');
+    if (mobileCanvas && mobileCanvas.classList.contains('active')) {
+      mobileCanvas.classList.remove('active');
+      document.body.classList.remove('no-scroll');
+    }
+    
+    // Then scroll to the section
+    targetElement.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  }
+}
+
+// Handle all anchor links with hash
+document.addEventListener('click', function(e) {
+  if (e.target.closest('a[href^="#"]')) {
+    e.preventDefault();
+    const href = e.target.closest('a').getAttribute('href');
+    if (href !== '#') {
+      smoothScrollTo(href.substring(1));
+    }
+  }
+}, false);
+
 /* 15. Home grid background */
 (function () {
 	var cards = $('.__js_home-grid-card');
