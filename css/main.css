@@ -3024,7 +3024,7 @@ textarea.custom-input {
 .card__image img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 600px;
 }
 
 .card__content {
