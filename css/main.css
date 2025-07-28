@@ -4088,7 +4088,21 @@ textarea.custom-input {
     margin-left: 20px;
   }
 }
-
+/* Set fixed height for all collection images */
+.latest-projects__carousel .card__image {
+  height: 450px; /* Adjust this value as needed */
+  overflow: hidden;
+}
+.latest-news__item .preview-card__image {
+  height: 400px; /* Adjust this value as needed */
+  overflow: hidden;
+}
+.latest-projects__carousel .card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This ensures images cover the area while maintaining aspect ratio */
+  object-position: center; /* Centers the image in the frame */
+}
 @media (min-width: 768px) {
   .latest-projects__more {
     flex-shrink: 0;
